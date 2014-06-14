@@ -1,3 +1,7 @@
+# Note
+
+this is the the fixed/improved version of [node-apk-parser](https://github.com/rubenv/node-apk-parser)
+
 # apk-parser - Android apk-file parser
 
 > Extract Android Manifest info from an APK file.
