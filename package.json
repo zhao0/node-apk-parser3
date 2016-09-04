@@ -1,11 +1,11 @@
 {
-  "name": "apk-parser2",
+  "name": "apk-parser3",
   "description": "Extract Android Manifest info from an APK file.",
   "version": "0.1.1",
-  "homepage": "https://github.com/gergelyke/node-apk-parser2",
+  "homepage": "https://github.com/zhao0/node-apk-parser3",
   "repository": {
     "type": "git",
-    "url": "git://github.com/gergelyke/node-apk-parser2.git"
+    "url": "git://github.com/zhao0/node-apk-parser3.git"
   },
   "main": "lib/index.js",
   "engines": {
