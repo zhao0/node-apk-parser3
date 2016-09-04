@@ -6,18 +6,17 @@ this is the the fixed/improved version of [node-apk-parser](https://github.com/r
 
 > Extract Android Manifest info from an APK file.
 
-[![Build Status](https://travis-ci.org/rubenv/node-apk-parser.png?branch=master)](https://travis-ci.org/rubenv/node-apk-parser)
 
 While there are some implementations for this out in the wild, none of them handle all of the intricacies of the APK file-format. This module uses the `aapt` tool from the Android SDK to solve that problem. The tool will be downloaded and installed during `npm install`. Tested on Linux and OS X.
 
 ## Getting started
 
-Add apk-parser to your project: `npm install --save apk-parser`.
+Add apk-parser to your project: `npm install --save apk-parser3`.
 
 Sample usage:
 
 ```js
-var parseApk = require('apk-parser');
+var parseApk = require('apk-parser3');
 parseApk('myApkFile.apk', function (err, data) {
     // Handle error or do something with data.
 });
@@ -26,45 +25,74 @@ parseApk('myApkFile.apk', function (err, data) {
 The returned data object is an object-representation of the `AndroidManifest.xml` file. Here's a sample file:
 
 ```js
-{
-    "manifest": [
-        {
-            "@package": "com.example.android.snake",
-            "uses-permission": [
-                {
-                    "@android:name": "android.permission.INTERNET"
-                }
-            ],
-            "application": [
-                {
-                    "@android:label": "Snake on a Phone",
-                    "activity": [
-                        {
-                            "@android:theme": "@0x1030006",
-                            "@android:name": "Snake",
-                            "@android:screenOrientation": 1,
-                            "@android:configChanges": "(type 0x11)0xa0",
-                            "intent-filter": [
-                                {
-                                    "action": [
-                                        {
-                                            "@android:name": "android.intent.action.MAIN"
-                                        }
-                                    ],
-                                    "category": [
-                                        {
-                                            "@android:name": "android.intent.category.LAUNCHER"
-                                        }
-                                    ]
-                                }
-                            ]
-                        }
-                    ]
-                }
-            ]
-        }
-    ]
-}
+{ package: ' name=com.tencent.mm versionCode=861 versionName=6.3.25',
+  sdkVersion: '15',
+  targetSdkVersion: '23',
+  'uses-permission': 'android.permission.READ_PROFILE',
+  'uses-feature-not-required': 'android.hardware.bluetooth_le',
+  'application-label': 'WeChat',
+  'application-label-en': 'WeChat',
+  'application-label-zh_CN': '微信',
+  'application-label-zh_TW': 'WeChat',
+  'application-label-fa': 'WeChat',
+  'application-label-uk': 'WeChat',
+  'application-label-tl': 'WeChat',
+  'application-label-sr': 'WeChat',
+  'application-label-zu': 'WeChat',
+  'application-label-sv': 'WeChat',
+  'application-label-sw': 'WeChat',
+  'application-label-fr_CA': 'WeChat',
+  'application-label-lo_LA': 'WeChat',
+  'application-label-en_GB': 'WeChat',
+  'application-label-bn_BD': 'WeChat',
+  'application-label-et_EE': 'WeChat',
+  'application-label-ka_GE': 'WeChat',
+  'application-label-ky_KG': 'WeChat',
+  'application-label-km_KH': 'WeChat',
+  'application-label-si_LK': 'WeChat',
+  'application-label-mk_MK': 'WeChat',
+  'application-label-ur_PK': 'WeChat',
+  'application-label-sq_AL': 'WeChat',
+  'application-label-hy_AM': 'WeChat',
+  'application-label-my_MM': 'WeChat',
+  'application-label-pa_IN': 'WeChat',
+  'application-label-ta_IN': 'WeChat',
+  'application-label-te_IN': 'WeChat',
+  'application-label-ml_IN': 'WeChat',
+  'application-label-en_IN': 'WeChat',
+  'application-label-kn_IN': 'WeChat',
+  'application-label-mr_IN': 'WeChat',
+  'application-label-gu_IN': 'WeChat',
+  'application-label-mn_MN': 'WeChat',
+  'application-label-ne_NP': 'WeChat',
+  'application-label-pt_BR': 'WeChat',
+  'application-label-gl_ES': 'WeChat',
+  'application-label-eu_ES': 'WeChat',
+  'application-label-is_IS': 'WeChat',
+  'application-label-es_US': 'WeChat',
+  'application-label-pt_PT': 'WeChat',
+  'application-label-en_AU': 'WeChat',
+  'application-label-ms_MY': 'WeChat',
+  'application-label-az_AZ': 'WeChat',
+  'application-label-kk_KZ': 'WeChat',
+  'application-label-uz_UZ': 'WeChat',
+  'application-icon-120': 'r/j/icon.png',
+  'application-icon-160': 'r/j/icon.png',
+  'application-icon-213': 'r/y/icon.png',
+  'application-icon-240': 'r/y/icon.png',
+  'application-icon-320': 'r/a0/icon.png',
+  'application-icon-480': 'r/a2/icon.png',
+  'application-icon-640': 'r/a2/icon.png',
+  application: ' label=WeChat icon=r/j/icon.png',
+  'uses-library-not-required': 'com.here.android',
+  'launchable-activity': ' name=com.tencent.mm.ui.LauncherUI  label=WeChat icon=',
+  'uses-feature': 'android.hardware.screen.portrait',
+  'uses-implied-feature': 'android.hardware.screen.portrait,one or more activities have specified a portrait orientation',
+  'supports-screens': ' small normal large xlarge',
+  'supports-any-density': ' true',
+  locales: ' --_-- en zh_CN zh_TW fa uk tl sr zu sv sw fr_CA lo_LA en_GB bn_BD et_EE ka_GE ky_KG km_KH si_LK mk_MK ur_PK sq_AL hy_AM my_MM pa_IN ta_IN te_IN ml_IN en_IN kn_IN mr_IN gu_IN mn_MN ne_NP pt_BR gl_ES eu_ES is_IS es_US pt_PT en_AU ms_MY az_AZ kk_KZ uz_UZ',
+  densities: ' 120 160 213 240 320 480 640',
+  'native-code': '  armeabi' }
 ```
 
 Things to note:
